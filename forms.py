@@ -6,17 +6,17 @@ from wtforms import validators
 class UsersForm(Form):
     nombre = StringField('nombre',[
         validators.DataRequired(message='el campo es requerido'),
-        validators.DataRequired(min=4, max=10, message = 'ingresa nombre valido')
+        validators.Length(min=4, max=20, message = 'ingresa nombre valido')
     ])
 
     apaterno = StringField('apaterno',[
         validators.DataRequired(message='el campo es requerido'),
-        validators.DataRequired(min=4, max=10, message = 'ingresa nombre valido')
+        validators.Length( max=20, min=4, message = 'ingresa nombre valido')
     ])
 
     amaterno = StringField('amaterno',[
         validators.DataRequired(message='el campo es requerido'),
-        validators.DataRequired(min=4, max=10, message = 'ingresa nombre valido')
+        validators.Length(min=4, max=20, message = 'ingresa nombre valido')
     ])
 
     edad = IntegerField('edad')
